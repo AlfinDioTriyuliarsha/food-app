@@ -1,0 +1,127 @@
+/* WRAPPER */
+.nav-wrapper {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 16px;
+}
+
+/* NAVBAR */
+.navbar {
+  max-width: 1200px;
+  margin: auto;
+  height: 72px;
+  padding: 0 24px;
+  border-radius: 20px;
+
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+}
+
+/* LOGO */
+.logo {
+  font-size: 22px;
+  font-weight: 800;
+  text-decoration: none;
+  color: #111827;
+}
+
+/* MENU */
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.nav-menu a {
+  position: relative;
+  text-decoration: none;
+  color: #374151;
+  font-weight: 600;
+}
+
+.nav-menu a.active {
+  color: #f97316;
+}
+
+/* FAVORITE BADGE */
+.favorite-badge {
+  position: absolute;
+  top: -6px;
+  right: -16px;
+  background: #ef4444;
+  color: white;
+  font-size: 11px;
+  padding: 2px 7px;
+  border-radius: 999px;
+  animation: pop 0.3s ease;
+}
+
+@keyframes pop {
+  0% {
+    transform: scale(0.6);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* HAMBURGER */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 24px;
+  height: 3px;
+  background: #111827;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translateY(8px);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translateY(-8px);
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-menu {
+    position: absolute;
+    top: 90px;
+    right: 16px;
+    background: white;
+    flex-direction: column;
+    padding: 18px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    display: none;
+  }
+
+  .nav-menu.open {
+    display: flex;
+  }
+}
